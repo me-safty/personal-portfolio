@@ -19,7 +19,7 @@ function changeWallpaper() {
   let lBtn = document.getElementById("lbtn");
   let rBtn = document.getElementById("rbtn");
   let arr = ["1.svg", "2.svg", "3.svg", "4.svg"];
-//   let arr = ["1.svg", "2.svg"];
+  //   let arr = ["1.svg", "2.svg"];
   img.src = `images/landing/${path}/${arr[2]}`;
   let x = arr.length - 1;
   //=========================
@@ -188,11 +188,13 @@ window.onscroll = (_) => {
 
 //================ header - scrolling ========================
 const header = document.querySelector("header");
-window.addEventListener("scroll", (_) =>
-  window.scrollY > 50
-    ? header.classList.add("scroll")
-    : header.classList.remove("scroll")
-);
+window.addEventListener("scroll", (_) => {
+  if (!mega.classList.contains("active")) {
+    window.scrollY > 50
+      ? header.classList.add("scroll")
+      : header.classList.remove("scroll");
+  }
+});
 
 //================ Image - Slider ============================
 const aLeft = document.querySelector(".portfolio .scroll .left");
@@ -200,7 +202,7 @@ const aRight = document.querySelector(".portfolio .scroll .right");
 const imgs = document.querySelector(".portfolio .images");
 const img = document.querySelector(".portfolio .images .img");
 // const allImg = document.querySelectorAll(".portfolio .images img");
-// console.log(allImg);  
+// console.log(allImg);
 slider(aLeft, aRight, imgs, img, 3);
 
 //================= Review - Slider ==================================
@@ -238,4 +240,15 @@ function slider(left, right, box, item, itemsNum) {
   });
 }
 //===================================================
+const menuBtn = document.querySelector("header .menu");
+const links = document.querySelectorAll(".mega li a");
+const mega = document.querySelector(".mega");
 
+menuBtn.onclick = (_) => {
+  mega.classList.toggle("active");
+  if (window.scrollY < 50) {
+    header.classList.toggle("scroll");
+  }
+};
+
+links.forEach((e) => (e.onclick = (_) => mega.classList.remove("active")));

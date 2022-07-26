@@ -276,6 +276,7 @@ header ul li a {
   color: #fff;
   font-size: 13px;
   transition: 0.1s;
+  white-space: nowrap;
 }
 header ul li a:hover {
   color: var(--main-color);
@@ -285,6 +286,7 @@ header .btns {
   justify-content: flex-end;
   gap: 10px;
   width: calc(100% / 3);
+  /* margin-right: 3%; */
 }
 header .btns button {
   padding: 6px 25px;
@@ -297,15 +299,104 @@ header .btns button {
   opacity: 1;
 }
 header .btns button:hover {
-  opacity: 0.7;
+  opacity: 0.9;
+  background: #0000;
+  border-color: #777;
 }
 header .btns .one {
   border: 1px solid #777;
   background-color: transparent;
 }
 header .btns .two {
+  border: 1px solid #777;
+  border-color: #1b1c20;
   background-image: linear-gradient(28deg, var(--main-color), #8324c1);
   background-color: var(--main-color);
+}
+header .menu {
+  display: none;
+}
+.mega {
+  display: none;
+}
+@media (max-width: 992px) {
+  header .btns .one {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+    width: 100%;
+  }
+  header .menu {
+    display: block;
+    cursor: pointer;
+    padding: 7px 9px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+  }
+  header .menu i {
+    color: #fff;
+    font-size: 20px;
+  }
+  header nav {
+    display: none;
+  }
+  header .btns {
+    display: none;
+  }
+  .mega {
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: -100%;
+    background: #1b1c20;
+    z-index: 10001;
+    text-align: center;
+    height: calc(100vh - 75px);
+    transition: 0.3s;
+  }
+  .mega.active {
+    right: 0;
+  }
+  .mega li {
+    font-size: 35px;
+    padding: 20px;
+  }
+  .mega li a {
+    position: relative;
+    color: transparent;
+    letter-spacing: 2px;
+    font-weight: bold;
+    -webkit-text-stroke: 0.5px #fff;
+    text-transform: uppercase;
+  }
+  .mega li a::before {
+    content: attr(data-text);
+    position: absolute;
+    color: var(--main-color);
+    width: 0%;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: 0.5s;
+    border-right: 5px solid #fff;
+  }
+  .mega li a:hover::before {
+    width: 100%;
+    border-color: var(--main-color);
+    filter: drop-shadow(0 0 20px var(--main-color));
+  }
+  .mega li a:hover {
+    -webkit-text-stroke: 0.5px var(--main-color);
+  }
 }
 /* end headder */
 /* //========================================================== */
@@ -318,7 +409,7 @@ header .btns .two {
 }
 .landing .line {
   position: absolute;
-  width: 0.1px;
+  width: 1px;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.116);
   top: 0;
@@ -341,7 +432,7 @@ header .btns .two {
   right: 30%;
 }
 .landing .l-one::after {
-  top: 68%;
+  top: 81%;
 }
 .landing .l-two::after {
   top: 25%;
@@ -436,6 +527,66 @@ header .btns .two {
   border-color: var(--main-color);
   opacity: 0.8;
 }
+@media (max-width: 1200px) {
+  .landing .s-box {
+    transform: translateX(-50%) scale(0.9);
+  }
+  .landing .box img {
+    width: 44%;
+  }
+}
+@media (max-width: 900px) {
+  .landing .box img {
+    width: 54%;
+  }
+}
+@media (max-width: 768px) {
+  .landing .box img {
+    width: 59%;
+  }
+  .landing .s-box {
+    transform: translateX(-50%) scale(0.75);
+  }
+  .landing .l-one {
+    left: 22%;
+  }
+  .landing .l-two {
+    right: 22%;
+  }
+}
+@media (max-width: 500px) {
+  .landing .box img {
+    width: 65%;
+  }
+  .landing .s-box {
+    transform: translateX(-50%) scale(0.55);
+  }
+  .landing .L-i,
+  .landing .R-i {
+    top: 85%;
+  }
+  .landing .L-i {
+    left: 34%;
+  }
+  .landing .R-i {
+    right: 34%;
+  }
+}
+@media (max-width: 370px) {
+  .landing .box img {
+    width: 85%;
+  }
+  .landing .L-i,
+  .landing .R-i {
+    top: 87%;
+  }
+  .landing .L-i {
+    left: 34%;
+  }
+  .landing .R-i {
+    right: 34%;
+  }
+}
 /* end landing */
 /* start about */
 .about {
@@ -479,6 +630,49 @@ header .btns .two {
 }
 .about .container img {
   width: 50%;
+}
+@media (max-width: 1200px) {
+  .about .container img {
+    width: 75%;
+  }
+  .about .container .text h1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .about .container .text p {
+    margin-left: 0%;
+  }
+  .about .container .text i {
+    left: -13%;
+  }
+}
+@media (max-width: 900px) {
+  .about .container .text {
+    margin-left: 20px;
+  }
+  .about .container .text i {
+    left: -6%;
+  }
+}
+@media (max-width: 768px) {
+  .about {
+    background: linear-gradient( to top, #232428 0%, #232428 50%, #1b1c20 50%, #1b1c20 100% );
+  }
+  .about .container {
+    flex-direction: column-reverse;
+
+  }
+  .about .container img {
+    width: 75%;
+  }
+  .about .container .text {
+    margin-left: 56px;
+  }
+}
+@media (max-width: 500px) {
+  .about .container .text i {
+    left: -12%;
+  }
 }
 /* end about */
 /* //============================================================== */
@@ -823,7 +1017,7 @@ header .btns .two {
   padding: 60px 20px;
   background-image: url(../images/experiences/1.jpg);
   background-size: cover;
-  background-image: var(--background-left);
+  /* background-image: var(--background-left); */
 }
 .experiences .overlay {
   position: absolute;
@@ -831,10 +1025,10 @@ header .btns .two {
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-image: var(--gradiant); */
+  background-image: var(--gradiant);
   z-index: 1;
   opacity: 0.95;
-  filter: brightness(0.8);
+  filter: brightness(0.4);
 }
 .experiences .container {
   position: relative;
@@ -1322,7 +1516,7 @@ header .btns .two {
 .contact [type="submit"] {
   cursor: pointer;
   width: 40%;
-  transition: .2s;
+  transition: 0.2s;
   align-self: start;
 }
 .contact [type="submit"]:hover {
@@ -1337,7 +1531,7 @@ footer {
 }
 footer .container {
   padding: 30px 50px 0;
-} 
+}
 footer .main-box {
   gap: 160px;
   padding: 0 20px 10px;
@@ -1349,7 +1543,6 @@ footer .col {
 footer .col:first-child {
   color: #fff;
   justify-content: start;
-  
 }
 /* footer .col:first-child > p {
   
@@ -1361,7 +1554,7 @@ footer .col .icons {
   justify-content: start;
 }
 footer .col .icons i {
-  transition: .2s;
+  transition: 0.2s;
   color: #fff;
 }
 footer .col .icons i:hover {
@@ -1376,13 +1569,11 @@ footer .col:first-child h1 {
 footer .col .phone,
 footer .col .email,
 footer .col .map {
-
   color: #fff;
   justify-content: start;
   gap: 10px;
   margin: 5px 0;
   font-size: 14px;
-
 }
 /* footer .col .phone i,
 footer .col .email i,

@@ -203,7 +203,14 @@ const imgs = document.querySelector(".portfolio .images");
 const img = document.querySelector(".portfolio .images .img");
 // const allImg = document.querySelectorAll(".portfolio .images img");
 // console.log(allImg);
-slider(aLeft, aRight, imgs, img, 3);
+const container = document.querySelector(".container")
+if (container.clientWidth <= 768) {
+  slider(aLeft, aRight, imgs, img, 2);
+} else if (container.clientWidth <= 550) {
+  slider(aLeft, aRight, imgs, img, 1);
+} else {
+  slider(aLeft, aRight, imgs, img, 3);
+}
 
 //================= Review - Slider ==================================
 const aLeft2 = document.querySelector(".testimonils .fa-angle-left");
@@ -221,7 +228,6 @@ function slider(left, right, box, item, itemsNum) {
   let count = 0;
   right.addEventListener("click", (_) => {
     if (count > -translate * itemsNum + 200) {
-      console.log(-translate * itemsNum + 300);
       count -= translate;
       box.style.transform = `translateX(${count}px)`;
     } else {

@@ -126,8 +126,14 @@ let bartopthree = document.querySelector(".skills .skille .three");
 let bartopfour = document.querySelector(".skills .skille .four");
 let barbottom = document.querySelectorAll(".skills .skille .barBottom");
 window.onscroll = (_) => {
+  console.log(window.scrollY)
   let skillsOffSetTop = skilles.offsetTop;
-  if (window.scrollY > skillsOffSetTop - 250) {
+  let num = 250;
+  const container = document.querySelector(".container");
+  if (container.clientWidth <= 768) {
+    num = 500
+  }
+  if (window.scrollY > skillsOffSetTop - num) {
     bartopone.style.animation = "topone .3s .6s linear forwards";
     bartoptow.style.animation = "toptwo .3s .6s linear forwards";
     bartopthree.style.animation = "topthree .3s .6s linear forwards";

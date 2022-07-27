@@ -568,7 +568,7 @@ header .menu {
   }
   .landing .L-i,
   .landing .R-i {
-    top: 85%;
+    top: 90%;
   }
   .landing .L-i {
     left: 34%;
@@ -1234,6 +1234,12 @@ header .menu {
     display: none;
   }
 }
+@media (max-width: 700px) {
+  .experiences .container {
+    height: fit-content;
+  }
+}
+
 /* end experiences */
 /* //============================================================== */
 /* start services */
@@ -1667,6 +1673,9 @@ header .menu {
   }
 }
 @media (max-width: 768px) {
+  .contact .container {
+    padding: 110px 0 0;
+  }
   .contact {
     height: 90vh;
   }
@@ -1842,11 +1851,10 @@ footer .copy {
   footer .copy p {
     font-size: 13px;
   }
-  footer .copy p:first-child {
-    /* margin: 0 auto; */
-  }
-  footer .copy p:nth-child(2) {
-    /* display: none; */
+}
+@media (max-width: 500px) {
+  .contact {
+    height: 100vh;
   }
 }
 /* end footer */

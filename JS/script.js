@@ -203,11 +203,11 @@ const imgs = document.querySelector(".portfolio .images");
 const img = document.querySelector(".portfolio .images .img");
 // const allImg = document.querySelectorAll(".portfolio .images img");
 // console.log(allImg);
-const container = document.querySelector(".container")
-if (container.clientWidth <= 768) {
-  slider(aLeft, aRight, imgs, img, 2);
+const container = document.querySelector(".container");
+if (container.clientWidth <= 768 && container.clientWidth > 550) {
+  slider(aLeft, aRight, imgs, img, 4);
 } else if (container.clientWidth <= 550) {
-  slider(aLeft, aRight, imgs, img, 1);
+  slider(aLeft, aRight, imgs, img, 5);
 } else {
   slider(aLeft, aRight, imgs, img, 3);
 }
@@ -218,16 +218,23 @@ const aRight2 = document.querySelector(".testimonils .fa-angle-right");
 const box = document.querySelector(".testimonils .t-box");
 const re = document.querySelector(".testimonils .t-box .reviwe");
 // const allRe = document.querySelectorAll(".testimonils .t-box .reviwe");
-slider(aLeft2, aRight2, box, re, 3);
+if (container.clientWidth <= 992 && container.clientWidth > 768) {
+  slider(aLeft2, aRight2, box, re, 4);
+} else if (container.clientWidth <= 500) {
+  slider(aLeft2, aRight2, box, re, 4);
+} else {
+  slider(aLeft2, aRight2, box, re, 3);
+}
 
 //================= Slider - Function ==================================
-function slider(left, right, box, item, itemsNum) {
-  // const itemsNum = Array.from(allItems).length - 3;
+function slider(left, right, box, item, remainingItems) {
+  // remaining items is the count of - the count of the shown images
+  // const remainingItems = Array.from(allItems).length - 3;
   const gap = parseInt(getComputedStyle(box).gap);
   const translate = item.clientWidth + gap;
   let count = 0;
   right.addEventListener("click", (_) => {
-    if (count > -translate * itemsNum + 200) {
+    if (count > -translate * remainingItems + 200) {
       count -= translate;
       box.style.transform = `translateX(${count}px)`;
     } else {
@@ -240,7 +247,7 @@ function slider(left, right, box, item, itemsNum) {
       count += translate;
       box.style.transform = `translateX(${count}px)`;
     } else {
-      count = -translate * itemsNum;
+      count = -translate * remainingItems;
       box.style.transform = `translateX(${count}px)`;
     }
   });

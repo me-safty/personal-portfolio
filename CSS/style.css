@@ -886,8 +886,9 @@ header .menu {
 @media (max-width: 768px) {
   .skills .box {
     flex-wrap: wrap;
-    gap: 0;
-    row-gap: 51px;
+    gap: 50px;
+    width: fit-content;
+    margin: 60px auto 0;
   }
   .skills .skille {
     width: 50%;
@@ -895,6 +896,7 @@ header .menu {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: calc(50% - 50px);
   }
 }
 /* end skills */
@@ -1084,7 +1086,7 @@ header .menu {
     max-height: 280px;
   }
   .portfolio .images .img .box {
-    padding: 30px 40px;
+    padding: 22px 35px;
   }
   .portfolio .images .img .box button {
     font-size: 12px;
@@ -1121,7 +1123,16 @@ header .menu {
   position: relative;
   z-index: 3;
   height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
+/* .experiences .time-line {
+  width: fit-content;
+  margin: auto;
+} */
 .experiences .years {
   display: flex;
   align-items: center;
@@ -1210,6 +1221,19 @@ header .menu {
 .experiences .years .box .content .line::before {
   bottom: 0;
 }
+@media (max-width: 992px) {
+  .experiences .years {
+    width: auto;
+  }
+  .experiences .time-line {
+    transform: scale(0.8);
+  }
+}
+@media (max-width: 768px) {
+  .experiences .time-line {
+    display: none;
+  }
+}
 /* end experiences */
 /* //============================================================== */
 /* start services */
@@ -1286,6 +1310,16 @@ header .menu {
   font-size: 12px;
   opacity: 1;
   margin: 0 10px 5px;
+}
+
+@media (max-width: 768px) {
+  .services .main-box {
+    flex-wrap: wrap;
+    gap: 50px;
+    row-gap: 50px;
+    height: fit-content;
+    margin: 82px 0 0;
+  }
 }
 /* end services */
 /* //============================================================== */
@@ -1401,6 +1435,23 @@ header .menu {
   font-size: 12px;
   color: #777;
   margin-top: 14px;
+}
+@media (max-width: 992px) {
+  .testimonils .main-box {
+    width: 42%;
+  }
+}
+@media (max-width: 768px) {
+  .testimonils .container {
+    padding: 126px 20px 82px;
+    flex-direction: column;
+  }
+  .testimonils .text-box {
+    margin-left: 47px;
+  }
+  .testimonils .main-box {
+    width: 91%;
+  }
 }
 /* end Testimonils */
 /* //============================================================== */

@@ -18,7 +18,8 @@ function changeWallpaper() {
   let img = document.getElementById("img11");
   let lBtn = document.getElementById("lbtn");
   let rBtn = document.getElementById("rbtn");
-  let arr = ["1.svg", "2.svg", "3.svg", "4.svg"];
+  // let arr = ["1.svg", "2.svg", "3.svg", "4.svg"];
+  let arr = ["1.svg", "2.svg", "3.svg"];
   //   let arr = ["1.svg", "2.svg"];
   img.src = `images/landing/${path}/${arr[2]}`;
   let x = arr.length - 1;

@@ -1458,6 +1458,14 @@ header .menu {
   .testimonils .main-box {
     width: 91%;
   }
+  .testimonils .text-box .icons {
+    margin: 0;
+    gap: 15px;
+    position: absolute;
+    top: 371px;
+    left: 36%;
+    transform: translateX(-50%);
+  }
 }
 /* end Testimonils */
 /* //============================================================== */

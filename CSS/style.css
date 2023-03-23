@@ -450,7 +450,7 @@ header .menu {
   top: 53%;
   left: 48%;
   transform: translate(-50%, -50%);
-  width: 35%;
+  width: 31vw;
   transition: 0.1s;
 }
 .landing .s-box {

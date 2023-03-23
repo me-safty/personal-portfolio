@@ -1491,7 +1491,7 @@ header .menu {
   background-size: cover;
   height: 62vw;
   position: relative;
-  align-items: flex-start;
+  align-items: center;
 }
 .contact .shape {
   position: absolute;

@@ -1489,7 +1489,7 @@ header .menu {
 .contact {
   background-image: url(../images/contact/wallpaperflare.jpg);
   background-size: cover;
-  height: 100vh;
+  height: 62vw;
   position: relative;
   align-items: flex-start;
 }
@@ -1679,7 +1679,7 @@ header .menu {
 }
 .contact form textarea {
   height: 164px;
-  width: 350px;
+  width: 30vw;
 }
 .contact [type="submit"] {
   cursor: pointer;
